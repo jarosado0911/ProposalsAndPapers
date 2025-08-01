@@ -1,0 +1,26 @@
+compile_pdf:
+  image: aergus/latex
+
+  before_script:
+    - apt-get install pdftk -y
+
+  script:
+    - sed -i 's/\[H\]/[h]/g' "2019 submission"/inc/efficiency.tex
+    - sed -i 's/\[H\]/[h]/g' "2020 submission"/inc/efficiency.tex
+    - cp split.sh "2019 submission" && cd "2019 submission" && make; ./split.sh 10; cd ../
+    - cp split.sh "2020 submission" && cd "2020 submission" && make; ./split.sh 10; cd ../
+  artifacts:
+    name: "Submission 2019"
+    paths:
+      - "2019 submission/xsede.pdf"
+      - "2019 submission/performance.pdf"
+      - "2019 submission/references.pdf"
+      - "2019 submission/proposal.pdf"
+
+  artifacts:
+    name: "Submission 2020"
+    paths:
+      - "2020 submission/xsede.pdf"
+      - "2020 submission/performance.pdf"
+      - "2020 submission/references.pdf"
+      - "2020 submission/proposal.pdf"

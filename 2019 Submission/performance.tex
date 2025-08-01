@@ -1,0 +1,35 @@
+% Preamble {{{
+\documentclass[a4paper, 11pt, notitlepage]{nsf}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{subfloat}
+\usepackage{subfigure}
+\usepackage{timestamp}
+\usepackage{chemarr}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{titling}
+\usepackage{mhchem}
+\usepackage{fixltx2e} 
+\pgfplotsset{compat=1.8}
+% \pgfplotsset{every axis/.style={scale only axis}}
+%\newcommand{\ug}{$\mathcal{UG}\xspace4$\xspace}
+\newcommand{\ug}{uG4\xspace}
+\newcommand{\delT}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\ccyt}[0]{c_c}
+\newcommand{\cer}[0]{c_e}
+\newcommand{\ip}[1]{p}
+\newcommand{\cca}[0]{[\mathrm{Ca}^{2+}]}
+\newcommand{\cip}[0]{[\mathrm{IP}_3]}
+% }}}
+
+\begin{document}
+
+\section*{Performance and Scaling for \ug}
+\input{inc/efficiency.tex}
+
+\end{document}

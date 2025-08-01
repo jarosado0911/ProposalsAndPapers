@@ -1,0 +1,94 @@
+% {{{ Preamble
+\documentclass[a4paper, 11pt, notitlepage]{nsf}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{timestamp}
+\usepackage{blindtext}
+\usepackage{chemarr}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{titling}
+\usepackage{mhchem}
+\usepackage{fixltx2e} 
+\usepackage{pgfgantt}
+\pgfplotsset{compat=1.8}
+% \pgfplotsset{every axis/.style={scale only axis}}
+% \newcommand{\ug}{$\mathcal{UG}\xspace4$\xspace}
+\newcommand{\ug}{uG4\xspace}
+\newcommand{\delT}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\ccyt}[0]{c_c}
+\newcommand{\cer}[0]{c_e}
+\newcommand{\ip}[1]{p}
+\newcommand{\cca}[0]{[\mathrm{Ca}^{2+}]}
+\newcommand{\cip}[0]{[\mathrm{IP}_3]}
+\renewcommand{\abstractname}{Summary}
+\renewcommand{\refname}{References}
+% }}}
+
+% Authors and Title {{{
+\author{Sean Gillian Queisser (PI), Stephan Grein}
+\title{Dimension-switching multigrid}
+\date{\today}
+% }}}
+
+% Begin of document {{{
+\begin{document}
+% }}}
+
+% Title and Abstract {{{
+\maketitle
+\begin{abstract}
+In this project we intend to develop and test a new dimension-switching multigrid method (DSMG). An important area of future application of this DSMG method is neuroscience, where highly anisotropic computational domains induce very fine 3D coarse grids, making standard geometric multigrid methods inefficient. We plan to study the calcium dynamics in reconstructed neurons, where the endoplasmic reticulum (ER), a multifunctional intracellular organelle of a neuron that consists of a complex three-dimensional network of connected endomembrane tubules, stacks and cisternae, is involved in various ion exchange processes. Of interest here are the three-dimensional spatiotemporal Ca\textsuperscript{2+} and Inositol-3-Phosphate (IP\textsubscript{3}) dynamics in the intracellular space of neurons. We model these biochemical dynamics by a system of diffusion-reaction equations with highly nonlinear flux-boundary conditions and the Poisson-Nernst-Planck (PNP) equations. Using finite volume discretization together with GMG and DSMG, we intend to (1) develop and study our DSMG-related code with respect to scalability and (2) run systematic numerical simulations of the calcium model on a very large, publicly available data set. While only 1d morphological neuron data is directly available, our project requires a detailed 3d representation of the neuronal computational domain. For this we developed an automated pipeline to generate the necessary domains. Thus, we (3) intend to study and reconstruct the \url{www.neuromorpho.org} database using available HPC resources. In total, this project should positively impact the computational mathematics research community, as well as parallel computing and neuroscience fields.
+\end{abstract}
+
+% version tag (final)
+% \textcolor{green}{\timestamp}
+% }}}
+
+% Research Objectives {{{
+\section{Research Objectives}
+\input{inc/research_objectives.tex}
+\input{inc/progress.tex}
+% }}}
+
+% Computational Methodology {{{
+\section{Computational Methology}
+\input{inc/methods.tex}
+% }}}
+
+% Application Efficiency {{{
+\section{Application efficiency}
+\input{inc/application_efficiency.tex}
+% \input{inc/efficiency.tex}
+% }}}
+
+% Computational Research Plan {{{
+\section{Computational Research Plan}
+\label{sec:research_plan}
+\input{inc/research_plan.tex}
+% }}}
+
+% Justification of Resources Requested {{{
+\section{Justification of Resources Requested}
+\input{inc/resources.tex}
+% }}}
+
+% Additional considerations {{{
+\section{Additional considerations}
+\input{inc/additional.tex}
+% }}}
+
+% {{{ Bibliography
+%\bibliographystyle{bst}
+\newpage
+\bibliography{references.bib}
+% }}}
+
+% {{{ End of document
+\end{document}
+% }}}

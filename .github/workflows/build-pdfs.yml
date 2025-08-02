@@ -3,33 +3,30 @@ name: Build PDFs
 on:
   push:
     paths:
-      - '2019 submission/**'
-      - 'Makefile'
+      - '2019 submission/xsede.tex'
+      - '2019 submission/performance.tex'
       - '.github/workflows/build-pdfs.yml'
   pull_request:
     paths:
-      - '2019 submission/**'
-      - 'Makefile'
+      - '2019 submission/xsede.tex'
+      - '2019 submission/performance.tex'
       - '.github/workflows/build-pdfs.yml'
   workflow_dispatch:
 
 jobs:
   build-pdfs:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up LaTeX environment
-        run: sudo apt-get update && sudo apt-get install -y texlive-full
+      - name: Install TeX Live (pdflatex)
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-base
 
-      - name: Build all PDFs
-        run: make all
+      - name: Build xsede.pdf
+        run: pdflatex xsede.tex
+        working-directory: 2019 submission
 
-      - name: Archive PDFs
-        uses: actions/upload-artifact@v4
-        with:
-          name: built-pdfs
-          path: |
-            2019 submission/**/*.pdf
+      - name: Build performance.pdf
+        run: pdflatex performance.tex
+        working-directory: 2019 submission

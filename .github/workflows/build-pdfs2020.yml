@@ -37,7 +37,7 @@ jobs:
         root_file: xsede.tex
         working_directory: 2020 submission
         compiler: pdflatex
-        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures texlive-plain-generic
+        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures texlive-plain-generic texlive-latex-recommended
         
     # Build performance.tex
     - name: Build performance.tex
@@ -46,7 +46,7 @@ jobs:
         root_file: performance.tex
         working_directory: 2020 submission
         compiler: pdflatex
-        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures texlive-plain-generic
+        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures texlive-plain-generic texlive-latex-recommended
 
     # Commit PDFs back to repo (only on main)
     - name: Commit and push compiled PDFs

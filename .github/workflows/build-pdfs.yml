@@ -1,0 +1,35 @@
+name: Build PDFs
+
+on:
+  push:
+    paths:
+      - '2019 submission/**'
+      - 'Makefile'
+      - '.github/workflows/build-pdfs.yml'
+  pull_request:
+    paths:
+      - '2019 submission/**'
+      - 'Makefile'
+      - '.github/workflows/build-pdfs.yml'
+  workflow_dispatch:
+
+jobs:
+  build-pdfs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up LaTeX environment
+        run: sudo apt-get update && sudo apt-get install -y texlive-full
+
+      - name: Build all PDFs
+        run: make all
+
+      - name: Archive PDFs
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-pdfs
+          path: |
+            2019 submission/**/*.pdf

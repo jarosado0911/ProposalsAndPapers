@@ -23,10 +23,10 @@ jobs:
       - name: Install TeX Live (pdflatex and extras)
         run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-science texlive-pictures
 
-      - name: Build xsede.pdf
-        run: pdflatex xsede.tex
+      - name: Build xsede.pdf in parent directory
+        run: pdflatex -output-directory=.. xsede.tex
         working-directory: 2019 submission
 
-      - name: Build performance.pdf
-        run: pdflatex performance.tex
+      - name: Build performance.pdf in parent directory
+        run: pdflatex -output-directory=.. performance.tex
         working-directory: 2019 submission

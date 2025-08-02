@@ -4,7 +4,7 @@
 ## Note: On OSX can use make open to build and open pdf in default PDF viewer
 LATEX=pdflatex
 LATEXMK=latexmk
-LATEXMKOPT=-pdf
+LATEXMKOPT=-pdf -bibtex -use-make
 OS=$(shell uname -s)
 
 MAIN=xsede

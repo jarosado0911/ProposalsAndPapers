@@ -30,3 +30,9 @@ jobs:
       - name: Build performance.pdf in parent directory
         run: pdflatex -output-directory=.. performance.tex
         working-directory: 2019 submission
+
+      - name: Upload  PDF artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: xsede-pdf
+          path: xsede.pdf

@@ -1,0 +1,35 @@
+The charge unit for SDSC Comet is the Service Unit (SU). One SU corresponds to the use of one compute
+core for one hour (The minimum charge for a job longer than 10 seconds is 1 SU). Accordingly the
+ requested SUs for the sub-projects in this proposal are summarized in Tab. \ref{tab:sus}, which 
+have been determined by the following equation: $$SUs = \sum Runtime (Wall time)~[h]\quad \times\quad \#~Cores\quad \times\quad \#~Runs$$
+
+The total storage requirement for the two sub-projects is \textbf{4.8 TiB}, in which the 
+sub-project \ref{sec:spine-model} requires \textbf{2 TiB} and sub-project \ref{sec:whole-cell} requires \textbf{2.8 TiB} of storage.
+
+\begin{table}
+\resizebox{\columnwidth}{!}{%
+\tiny
+\begin{tabular}{llrrrrr}
+   \hline\hline
+   \multicolumn{7}{l}{Compute time requirements for \textbf{SDSC Comet}}\\
+   \hline
+   Sub-project &  Type     & \# runs   & \# Simulation Time & Wall time    & \# cores/ & Total \\
+           &  of run      &           &  /run [sec.]      &  /run [h] &  run      &  [core-h] (SU) \\
+   \hline\hline
+   Synaptic spine dynamics  & Baseline & 90    &    0.02     &   1.00        &  30    &  2,700 \\
+   \hline
+   Synaptic spine dynamics & RyR &    9000     &    0.02     &     1.00  &    30   &   270,000 \\
+   \hline
+   Synaptic spine dynamics & Calcium pulse  &   135    &    3.00     &   1.00       &  4,500    &  607,500 \\
+   \hline
+   Whole cell dynamics     & Synaptic location  &    50     &    2.00      &  1.$\overline{66}$        &  3,072   &   256,000 \\
+   Whole cell dynamics     & Synaptic strength  &    30     &    2.00     &  1.$\overline{66}$    &  3,072   &   153,600 \\
+   Whole cell dynamics     & Synapse loss  &    60     &    2.00    &  1.$\overline{66}$       &  3,072   &  307,200 \\
+   \hline
+   TOTAL    &              &           &           &               &           &  \textbf{1,597,000} \\
+   \hline\hline
+\end{tabular}}
+\caption{Total number of anticipated SUs on SDSC Comet for the two requested sub-projects 
+as outlined in sections \ref{sec:spine-model}, \ref{sec:whole-cell}.}
+\label{tab:sus}
+\end{table}

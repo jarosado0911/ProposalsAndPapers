@@ -7,6 +7,7 @@ on:
       - '2019 submission/performance.tex'
       - '**.bib'
       - '**.sty'
+      - '**.cls'
       - '.github/workflows/build-submissions.yml'
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - '2019 submission/performance.tex'
       - '**.bib'
       - '**.sty'
+      - '**.cls'
       - '.github/workflows/build-submissions.yml'
   workflow_dispatch:
 
@@ -32,15 +34,19 @@ jobs:
     - name: Build xsede.tex
       uses: dante-ev/latex-action@latest
       with:
-        root_file: 2019 submission/xsede.tex
-        latexmk_use_lualatex: false
+        root_file: xsede.tex
+        working_directory: 2019 submission
+        compiler: pdflatex
+        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
 
     # Build performance.tex
     - name: Build performance.tex
       uses: dante-ev/latex-action@latest
       with:
-        root_file: 2019 submission/performance.tex
-        latexmk_use_lualatex: false
+        root_file: performance.tex
+        working_directory: 2019 submission
+        compiler: pdflatex
+        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
 
     # Commit PDFs back to repo (only on main)
     - name: Commit and push compiled PDFs

@@ -1,40 +1,65 @@
-name: Build PDFs
+name: Build Submission PDFs
 
 on:
   push:
     paths:
       - '2019 submission/xsede.tex'
       - '2019 submission/performance.tex'
-      - '.github/workflows/build-pdfs.yml'
+      - '**.bib'
+      - '**.sty'
+      - '.github/workflows/build-submissions.yml'
   pull_request:
     paths:
       - '2019 submission/xsede.tex'
       - '2019 submission/performance.tex'
-      - '.github/workflows/build-pdfs.yml'
+      - '**.bib'
+      - '**.sty'
+      - '.github/workflows/build-submissions.yml'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build-pdfs:
+  build-submissions:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-      - name: Install TeX Live (pdflatex and extras)
-        run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-science texlive-pictures
+    # Build xsede.tex
+    - name: Build xsede.tex
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: 2019 submission/xsede.tex
+        latexmk_use_lualatex: false
 
-      - name: Build xsede.pdf in parent directory
-        run: pdflatex xsede.tex
-        working-directory: 2019 submission
+    # Build performance.tex
+    - name: Build performance.tex
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: 2019 submission/performance.tex
+        latexmk_use_lualatex: false
 
-      - name: Build performance.pdf in parent directory
-        run: pdflatex performance.tex
-        working-directory: 2019 submission
+    # Commit PDFs back to repo (only on main)
+    - name: Commit and push compiled PDFs
+      if: github.ref == 'refs/heads/main'
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git pull --rebase
+        git add '2019 submission/xsede.pdf' '2019 submission/performance.pdf'
+        git commit -m "Auto-update submission PDFs"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload PDFs
-        uses: actions/upload-artifact@v4
-        with:
-          name: compiled-pdfs
-          path: |
-            2019 submission/xsede.pdf
-            2019 submission/performance.pdf
+    # Upload artifacts
+    - name: Upload compiled PDFs
+      uses: actions/upload-artifact@v4
+      with:
+        name: 2019-submission-pdfs
+        path: |
+          2019 submission/xsede.pdf
+          2019 submission/performance.pdf

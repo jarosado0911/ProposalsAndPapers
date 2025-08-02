@@ -24,15 +24,17 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-science texlive-pictures
 
       - name: Build xsede.pdf in parent directory
-        run: pdflatex -output-directory=.. xsede.tex
+        run: pdflatex xsede.tex
         working-directory: 2019 submission
 
       - name: Build performance.pdf in parent directory
-        run: pdflatex -output-directory=.. performance.tex
+        run: pdflatex performance.tex
         working-directory: 2019 submission
 
-      - name: Upload  PDF artifacts
+      - name: Upload PDFs
         uses: actions/upload-artifact@v4
         with:
-          name: xsede-pdf
-          path: xsede.pdf
+          name: compiled-pdfs
+          path: |
+            2019 submission/xsede.pdf
+            2019 submission/performance.pdf

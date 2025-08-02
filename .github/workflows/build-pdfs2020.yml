@@ -1,0 +1,70 @@
+name: Build 2020 Submission PDFs
+
+on:
+  push:
+    paths:
+      - '2020 submission/xsede.tex'
+      - '2020 submission/performance.tex'
+      - '**.bib'
+      - '**.sty'
+      - '**.cls'
+      - '.github/workflows/build-pdfs.yml'
+  pull_request:
+    paths:
+      - '2020 submission/xsede.tex'
+      - '2020 submission/performance.tex'
+      - '**.bib'
+      - '**.sty'
+      - '**.cls'
+      - '.github/workflows/build-pdfs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-submissions:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Build xsede.tex
+    - name: Build xsede.tex
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: xsede.tex
+        working_directory: 2020 submission
+        compiler: pdflatex
+        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
+
+    # Build performance.tex
+    - name: Build performance.tex
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: performance.tex
+        working_directory: 2020 submission
+        compiler: pdflatex
+        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
+
+    # Commit PDFs back to repo (only on main)
+    - name: Commit and push compiled PDFs
+      if: github.ref == 'refs/heads/main'
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add '2020 submission/xsede.pdf' '2020 submission/performance.pdf'
+        git commit -m "Auto-update submission PDFs"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Upload artifacts
+    - name: Upload compiled PDFs
+      uses: actions/upload-artifact@v4
+      with:
+        name: 2020-submission-pdfs
+        path: |
+          2020 submission/xsede.pdf
+          2020 submission/performance.pdf

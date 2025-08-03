@@ -1,7 +1,7 @@
 # 🧑‍🔬 Welcome to my proposals repository
 
 [![XSEDE](https://img.shields.io/badge/XSEDE-Extreme%20Science%20and%20Engineering%20Discovery%20Environment-blue.svg)](https://www.xsede.org) 
-![Build Submission PDFs 2019](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs.yml/badge.svg) ![Build Submission PDFs 2020](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs2020.yml/badge.svg)
+![Build PDFs 2019](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs.yml/badge.svg) ![Build PDFs 2020](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs2020.yml/badge.svg)
 
 ## XSEDE Proposals 
 

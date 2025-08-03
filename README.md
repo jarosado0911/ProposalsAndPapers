@@ -14,6 +14,6 @@ This was the submission prior to my arrival at Temple University, credit is to b
 - [Download latest 2019 performance.pdf](2019%20submission/performance.pdf)
 
 ### 2020 Submission:
-This was the submission prior to my arrival at Temple University, credit is to be given to Dr. Gillian Queisser and Dr. Stephan Grein for this first proposal.
+This was the submission from when I joined the project, I did performance anlaysis on the San Diego Super Computer (SDSC), I also incorporate my intracellular calcium simulations with this project.
 - [Download latest 2020 xsede.pdf](2020%20submission/xsede.pdf)
 - [Download latest 2020 performance.pdf](2020%20submission/performance.pdf)

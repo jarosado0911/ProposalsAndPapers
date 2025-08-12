@@ -1,0 +1,72 @@
+name: Build LaTeX Paper
+
+on:
+  push:
+    paths:
+      - 'DendriticSpinePaper/**'
+      - '.github/workflows/build-paper.yml'
+  pull_request:
+    paths:
+      - 'DendriticSpinePaper/**'
+  workflow_dispatch:
+    inputs:
+      commit_built_pdfs:
+        description: 'Commit built PDFs back to the repo'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+permissions:
+  contents: write   # required only if you enable the commit step
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Fast, reliable LaTeX build with automatic TeX Live package install + caching
+      - name: Compile LaTeX (latexmk)
+        uses: xu-cheng/latex-action@v2
+        with:
+          # The LaTeX root file(s) to compile (comma-separated if multiple)
+          root_file: main.tex
+          working_directory: DendriticSpinePaper
+          # latexmk default engine is pdfLaTeX; switch with latexmk_use_[x|lua]latex if needed
+          # latexmk_use_xelatex: true
+          # latexmk_use_lualatex: true
+          args: -pdf -interaction=nonstopmode -file-line-error
+          # If you use biber instead of bibtex, latex-action auto-detects and runs it.
+          # Otherwise, bibtex runs automatically when needed.
+          # Extra Ubuntu packages (rarely needed; kept here for convenience)
+          # extra_system_packages: "ghostscript"
+
+      - name: List produced PDFs (debug)
+        run: |
+          ls -lh DendriticSpinePaper || true
+          ls -lh DendriticSpinePaper/*.pdf || echo "No PDFs found."
+
+      - name: Upload PDFs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dendritic-spine-paper
+          path: |
+            DendriticSpinePaper/*.pdf
+          if-no-files-found: warn
+          retention-days: 14
+
+      # Optional: Commit the built PDFs back into the repo (guarded by event + input)
+      - name: Commit built PDFs back to repo
+        if: >
+          (github.event_name == 'push' && startsWith(github.ref, 'refs/heads/')) ||
+          (github.event_name == 'workflow_dispatch' && inputs.commit_built_pdfs == 'true')
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "DendriticSpinePaper/*.pdf"
+          author_name: github-actions
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: "chore(paper): update built PDFs from CI"
+          push: true

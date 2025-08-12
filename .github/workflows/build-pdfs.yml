@@ -22,49 +22,78 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: build-submission-pdfs
+  cancel-in-progress: true
+
 jobs:
   build-submissions:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # needed to rebase/push safely
+          persist-credentials: true
 
-    # Build xsede.tex
-    - name: Build xsede.tex
-      uses: dante-ev/latex-action@latest
-      with:
-        root_file: xsede.tex
-        working_directory: 2019 submission
-        compiler: pdflatex
-        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
+      # Build xsede.tex
+      - name: Build xsede.tex
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: xsede.tex
+          working_directory: 2019 submission
+          compiler: pdflatex
+          extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
 
-    # Build performance.tex
-    - name: Build performance.tex
-      uses: dante-ev/latex-action@latest
-      with:
-        root_file: performance.tex
-        working_directory: 2019 submission
-        compiler: pdflatex
-        extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
+      # Build performance.tex
+      - name: Build performance.tex
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: performance.tex
+          working_directory: 2019 submission
+          compiler: pdflatex
+          extra_system_packages: texlive-latex-extra texlive-science texlive-pictures
 
-    # Commit PDFs back to repo (only on main)
-    - name: Commit and push compiled PDFs
-      if: github.ref == 'refs/heads/main'
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add '2019 submission/xsede.pdf' '2019 submission/performance.pdf'
-        git commit -m "Auto-update submission PDFs"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: List produced PDFs (debug)
+        run: |
+          ls -lh "2019 submission" || true
+          ls -lh "2019 submission"/*.pdf || echo "No PDFs found."
 
-    # Upload artifacts
-    - name: Upload compiled PDFs
-      uses: actions/upload-artifact@v4
-      with:
-        name: 2019-submission-pdfs
-        path: |
-          2019 submission/xsede.pdf
-          2019 submission/performance.pdf
+      # Commit PDFs back to repo (only on main)
+      - name: Commit and push compiled PDFs
+        if: github.ref == 'refs/heads/main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+
+          # Be explicit about branch and ensure we’re up-to-date
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git pull --rebase origin main
+
+          # Add PDFs if they changed
+          git add "2019 submission/xsede.pdf" "2019 submission/performance.pdf" || true
+
+          # Skip commit if nothing changed
+          if git diff --cached --quiet; then
+            echo "No PDF changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Auto-update submission PDFs [skip ci]"
+          # Use --force-with-lease to avoid accidental overwrite but handle concurrent pushes
+          git push --force-with-lease origin main
+
+      # Upload artifacts for easy download from the run page
+      - name: Upload compiled PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2019-submission-pdfs
+          path: |
+            2019 submission/xsede.pdf
+            2019 submission/performance.pdf
+          if-no-files-found: error

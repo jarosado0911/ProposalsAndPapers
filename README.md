@@ -2,7 +2,7 @@
 
 [![XSEDE](https://img.shields.io/badge/XSEDE-Extreme%20Science%20and%20Engineering%20Discovery%20Environment-blue.svg)](https://www.xsede.org) 
 
-![Build PDFs 2019](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs.yml/badge.svg) ![Build PDFs 2020](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs2020.yml/badge.svg)
+![Build PDFs 2019](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs.yml/badge.svg) ![Build PDFs 2020](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs2020.yml/badge.svg) ![Build Spine PDF](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-spine.yml/badge.svg)
 
 ## XSEDE Proposals 
 
@@ -17,3 +17,7 @@ This was the submission prior to my arrival at Temple University, credit is to b
 This was the submission from when I joined the project, I did performance anlaysis on the San Diego Super Computer (SDSC), I also incorporate my intracellular calcium simulations with this project.
 - [Download latest 2020 xsede.pdf](2020%20submission/xsede.pdf)
 - [Download latest 2020 performance.pdf](2020%20submission/performance.pdf)
+
+### Dendritic Spine Paper
+This was a paper I collaborated with my doctoral advisor Dr. Gillian Queisser and Dr. Andreas Vlachos and Viet. This was the pre-published version.
+- [Dendritic Spine](https://github.com/jarosado0911/ProposalsAndPapers/blob/main/DendriticSpinePaper/main.pdf)

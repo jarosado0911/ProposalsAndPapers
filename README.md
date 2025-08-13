@@ -3,8 +3,7 @@
 [![XSEDE](https://img.shields.io/badge/XSEDE-Extreme%20Science%20and%20Engineering%20Discovery%20Environment-blue.svg)](https://www.xsede.org) 
 
 ![Build PDFs 2019](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs.yml/badge.svg) ![Build PDFs 2020](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs2020.yml/badge.svg) ![Build Spine PDF](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-spine.yml/badge.svg) [![Build 2021 Submission PDFs](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2021-submission.yml/badge.svg?branch=main)](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2021-submission.yml) [![Build 2021 Progress PDFs](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build2021progress.yml/badge.svg?branch=main)](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build2021progress.yml)
-
-
+[![Build 2022 Submission-Renewal PDFs](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2022-submission-renewal.yml/badge.svg?branch=main)](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2022-submission-renewal.yml)
 
 ## XSEDE Proposals 
 

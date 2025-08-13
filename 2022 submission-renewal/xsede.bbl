@@ -1,0 +1,175 @@
+ \newcommand{\noop}[1]{}
+\begin{thebibliography}{32}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[Ascoli et~al.(2007)Ascoli, Donohue, and Halavi]{Ascoli2007}
+Ascoli, GA; Donohue, DE; Halavi, M. ``Neuromorpho.org: A central resource for
+  neuronal morphologies,'' {\em Journal of Neuroscience\/}, v.~27(35), 2007, p.
+  9247--9251
+
+\bibitem[Bading(2000)]{Bading2000}
+Bading, H. ``Transcription-dependent neuronal plasticity: the nuclear calcium
+  hypothesis,'' {\em Eur J Biochem\/}, v. 267, 2000, p. 5280--5283
+
+\bibitem[Bezprozvanny(2009)]{Bezprozvanny2009}
+Bezprozvanny, I. ``Calcium signaling and neurodegenerative diseases,'' {\em
+  Trends in Molecular Medicine\/}, v.~15(3), 2009, p. 89 -- 100
+
+\bibitem[Borg-Graham(1999)]{BorgGraham}
+Borg-Graham, LJ. {\em Interpretations of Data and Mechanisms for Hippocampal
+  Pyramidal Cell Models\/}, 1999
+
+\bibitem[Breit et~al.(2018)Breit, Kessler, Stepniewski, Vlachos, and
+  Queisser]{Breit2018b}
+Breit, M; Kessler, M; Stepniewski, M; Vlachos, A; Queisser, G.
+  ``Spine-to-dendrite calcium modeling discloses relevance for precise
+  positioning of ryanodine receptor-containing spine endoplasmic reticulum,''
+  {\em Scientific Reports\/}, v.~8(1), 2018, p. 15624
+
+\bibitem[Breit \& Queisser(2018)Breit and Queisser]{Breit2018}
+Breit, M; Queisser, G. ``What is required for neuronal calcium waves? a
+  numerical parameter study,'' {\em The Journal of Mathematical
+  Neuroscience\/}, v.~8(1), 2018, p.~9
+
+\bibitem[Breit et~al.(2016)Breit, Stepniewski, Grein, Gottmann, Reinhardt, and
+  Queisser]{Breit2016}
+Breit, M; Stepniewski, M; Grein, S; Gottmann, P; Reinhardt, L; Queisser, G.
+  ``Anatomically detailed and large-scale simulations studying synapse loss and
+  synchrony using {N}euro{B}ox,'' {\em Frontiers in Neuroanatomy\/}, v.~10,
+  2016, p.~8
+
+\bibitem[Chan et~al.(2009)Chan, Gertler, and Surmeier]{Chan2009}
+Chan, CS; Gertler, TS; Surmeier, DJ. ``Calcium homeostasis, selective
+  vulnerability and parkinson's disease,'' {\em Trends in Neurosciences\/},
+  v.~32(5), 2009, p. 249 -- 256
+
+\bibitem[Cheung et~al.(2008)Cheung, Shineman, M{\"u}ller, C{\'a}rdenas, Mei,
+  Yang, Tomita, Iwatsubo, Lee, and Foskett]{Cheung2008}
+Cheung, KH; Shineman, D; M{\"u}ller, M; C{\'a}rdenas, C; Mei, L; Yang, J;
+  Tomita, T; Iwatsubo, T; Lee, VMY; Foskett, JK. ``Mechanism of
+  {C}a\textsuperscript{2+} disruption in {A}lzheimer's disease by presenilin
+  regulation of {I}ns{P}\textsubscript{3} receptor channel gating,'' {\em
+  Neuron\/}, v.~58(6), 2008, p. 871 -- 883
+
+\bibitem[Eymard et~al.(2000)Eymard, Gallouët, and Herbin]{Eymard2000}
+Eymard, R; Gallouët, T; Herbin, R. ``Finite volume methods,'' In {\em Finite
+  volume methods\/}, Elsevier, v.~7 of {\em Handbook of Numerical Analysis\/},
+  2000, p. 713 -- 1018
+
+\bibitem[Finch et~al.(2012)Finch, Tanaka, and Augustine]{Finch2012}
+Finch, EA; Tanaka, K; Augustine, GJ. ``Calcium as a trigger for cerebellar
+  long-term synaptic depression,'' {\em The Cerebellum\/}, v.~11(3), 2012, p.
+  706--717
+
+\bibitem[Green \& LaFerla(2008)Green and LaFerla]{Green2008}
+Green, KN; LaFerla, FM. ``Linking calcium to {A}beta and {A}lzheimer's
+  disease,'' {\em Neuron\/}, v.~59(2), 2008, p. 190 -- 194
+
+\bibitem[Grein(2020)]{Grein2020}
+Grein, S. {\em A novel mesh generator for the numerical simulation of
+  multi-scale physics in neurons\/}, Ph.D. thesis, Temple University, 2020
+
+\bibitem[Grein et~al.(2014)Grein, Stepniewski, Reiter, Knodel, and
+  Queisser]{Grein14}
+Grein, S; Stepniewski, M; Reiter, S; Knodel, MM; Queisser, G. ``1d-3d hybrid
+  modelling - from multi-compartment models to full resolution models in space
+  and time,'' {\em Frontiers in Neuroinformatics\/}, v.~8(68), 2014
+
+\bibitem[Hardingham et~al.(1997)Hardingham, Chawla, Johnson, and
+  Bading]{Hardingham1997}
+Hardingham, GE; Chawla, S; Johnson, CM; Bading, H. ``Distinct functions of
+  nuclear and cytoplasmic calcium in the control of gene expression,'' {\em
+  Nature\/}, v. 385(6613), 1997, p. 260--265
+
+\bibitem[Heppner et~al.(2013)Heppner, Lampe, N{\"a}gel, Reiter, Rupp, Vogel,
+  and Wittum]{Heppner13}
+Heppner, I; Lampe, M; N{\"a}gel, A; Reiter, S; Rupp, M; Vogel, A; Wittum, G.
+  ``Software framework ug4: {P}arallel multigrid on the {H}ermit
+  supercomputer,'' In {\em High Performance Computing in Science and
+  Engineering 12\/}, Springer, 2013, p. 435--449
+
+\bibitem[Jedlicka \& Deller(2017)Jedlicka and Deller]{Jedlicka2017}
+Jedlicka, P; Deller, T. ``Understanding the role of synaptopodin and the spine
+  apparatus in {H}ebbian synaptic plasticity {N}ew perspectives and the need
+  for computational modeling,'' {\em Neurobiology of Learning and Memory\/}, v.
+  138, 2017, p. 21 -- 30, mCCS 2017
+
+\bibitem[Knodel et~al.(2014)Knodel, Geiger, Lihao, Bucher, Grillo, Wittum,
+  Schuster, and Queisser]{Knodel2014}
+Knodel, M; Geiger, R; Lihao, G; Bucher, D; Grillo, A; Wittum, G; Schuster, C;
+  Queisser, G. ``Synaptic bouton properties are tuned to best fit the
+  prevailing firing pattern,'' {\em Frontiers in Computational Neuroscience\/},
+  2014
+
+\bibitem[Maggio \& Vlachos(2014)Maggio and Vlachos]{Maggio2014}
+Maggio, N; Vlachos, A. ``Synaptic plasticity at the interface of health and
+  disease: {N}ew insights on the role of endoplasmic reticulum intracellular
+  calcium stores,'' {\em Neuroscience\/}, v. 281, 2014, p. 135 -- 146
+
+\bibitem[Milner et~al.(1998)Milner, Squire, and Kandel]{Milner1998}
+Milner, B; Squire, L; Kandel, E. ``Cognitive neuroscience and the study of
+  memory,'' {\em Neuron\/}, v.~20, 1998, p. 445--468
+
+\bibitem[M\"orschel et~al.(2017)M\"orschel, Breit, and Queisser]{Moerschel2017}
+M\"orschel, K; Breit, M; Queisser, G. ``{Generating Neuron Geometries for
+  Detailed Three-Dimensional Simulations Using AnaMorph},'' {\em
+  Neuroinformatics\/}, v.~15, 2017
+
+\bibitem[Queisser et~al.(2011)Queisser, Wiegert, and Bading]{Queisser11}
+Queisser, G; Wiegert, S; Bading, H. ``Structural dynamics of the nucleus: Basis
+  for morphology modulation of nuclear calcium signaling and gene
+  transcription,'' {\em Nucleus\/}, v.~2(2), 2011, p. 98--104
+
+\bibitem[Reiter(2012)]{Reiter2012}
+Reiter, S. ``Pro{M}esh -- {M}eshing of unstructured grids in 1, 2, and 3
+  dimensions'', 2012
+
+\bibitem[Reiter et~al.(2014)Reiter, Vogel, Heppner, Rupp, and Wittum]{Reiter12}
+Reiter, S; Vogel, A; Heppner, I; Rupp, M; Wittum, G. ``A massively parallel
+  geometric multigrid solver on hierarchically distributed grids,'' {\em
+  Computing and Visualization in Science\/}, 2014
+
+\bibitem[Segal \& Korkotian(2014)Segal and Korkotian]{Segal2014}
+Segal, M; Korkotian, E. ``Endoplasmic reticulum calcium stores in dendritic
+  spines,'' {\em Frontiers in Neuroanatomy\/}, v.~8, 2014, p.~64
+
+\bibitem[Stepniewski et~al.(2019)Stepniewski, Breit, Hoffer, and
+  Queisser]{Stepniewski2019b}
+Stepniewski, S; Breit, M; Hoffer, M; Queisser, G. ``Neuro{B}ox: computational
+  mathematics in multiscale neuroscience,'' {\em Computing and {V}isualization
+  in {S}cience\/}, 2019
+
+\bibitem[Verkhratsky(2004)]{Verkhratsky2005}
+Verkhratsky, A. ``Physiology and pathophysiology of the calcium store in the
+  endoplasmic reticulum of neurons,'' {\em Physiological Reviews\/}, v.~85(1),
+  2004, p. 201--279
+
+\bibitem[Vogel et~al.(2013)Vogel, Reiter, Rupp, N{\"a}gel, and
+  Wittum]{Vogel2013}
+Vogel, A; Reiter, S; Rupp, M; N{\"a}gel, A; Wittum, G. ``{UG} 4: {A} novel
+  flexible software system for simulating {PDE} based models on high
+  performance computers,'' {\em Computing and Visualization in Science\/},
+  v.~16(4), 2013, p. 165--179
+
+\bibitem[West et~al.(2002)West, Griffith, and Greenberg]{West2002}
+West, A; Griffith, E; Greenberg, M. ``Regulation of transcription factors by
+  neuronal activity,'' {\em Nat Rev Neurosci\/}, v.~3, 2002, p. 921--931
+
+\bibitem[Wittmann et~al.(2009)Wittmann, Queisser, Eder, Wiegert, Bengtson,
+  Hellwig, Wittum, and Bading]{Wittmann2009}
+Wittmann, M; Queisser, G; Eder, A; Wiegert, J; Bengtson, C; Hellwig, A; Wittum,
+  G; Bading, H. ``Synaptic activity induces dramatic changes in the geometry of
+  the cell nucleus: Interplay between nuclear structure, histone h3
+  phosphorylation, and nuclear calcium signaling,'' {\em Journal of
+  Neuroscience\/}, v. 29(47), 2009, p. 14687--14700
+
+\bibitem[Xylouris(2013)]{Xylouris2012}
+Xylouris, K. ``Generalized cable equation for signal processing in neurons,''
+  {\em PhD Thesis\/}, 2013
+
+\bibitem[Xylouris et~al.(2007)Xylouris, Queisser, and Wittum]{Xylouris2007}
+Xylouris, K; Queisser, G; Wittum, G. ``A three-dimensional mathematical model
+  of active signal processing in axons,'' {\em Computing and Visualization in
+  Science\/}, v.~13, 2007, p. 409--418
+
+\end{thebibliography}

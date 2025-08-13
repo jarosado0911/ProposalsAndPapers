@@ -1,0 +1,35 @@
+The charge unit for SDSC Expanse is the Service Unit (SU). One SU corresponds to the use of one compute
+core for one hour (The minimum charge for a job longer than 10 seconds is 1 SU). Accordingly the
+ requested SUs for the sub-projects in this proposal are summarized in Tab. \ref{tab:sus}, which 
+have been determined by the following equation: $$SUs = \sum Runtime (Wall time)~[h]\quad \times\quad \#~Cores\quad \times\quad \#~Runs$$
+
+The total storage requirement for the two sub-projects is \textbf{4.8 TiB}, in which the 
+sub-project \ref{sec:spine-model} requires \textbf{2 TiB} and sub-project \ref{sec:whole-cell} requires \textbf{2.8 TiB} of storage.
+
+\begin{table}
+\resizebox{\columnwidth}{!}{%
+\tiny
+\begin{tabular}{llrrrrr}
+   \hline\hline
+   \multicolumn{7}{l}{Compute time requirements for \textbf{SDSC Expanse}}\\
+   \hline
+   Sub-project &  Type     & \# runs   & \# Simulation Time & Wall time    & \# core-h/ & Total \\
+           &  of run      &           &  /run [sec.]      &  /run [h] &  run      &  [core-h] (SU) \\
+   \hline\hline
+   Synaptic spine dynamics  & TMS-induced & 135    &    0.25     &   1.00        &  540    &  67,500 \\
+   \hline
+   Synaptic spine dynamics & Single Pulse &    900     &    0.02     &     1.00  &    40   &   36,000 \\
+   \hline
+   Synaptic spine dynamics & Low-Threshold Pulse  &   45    &    1.00     &   1.00       &  2,000    &  90,000 \\
+   \hline
+   Whole cell dynamics     & Variation of regions &    50     &    1.00      &  0.5        &  3,072   &   76,800 \\
+   Whole cell dynamics     & Receptor densities  &    30     &    1.00     &  0.5    &  3,072   &   153,600 \\
+   Whole cell dynamics     & Synchronicity  &    60     &    1.00    &  0.5       &  3,072   &  76,800 \\
+   \hline
+   TOTAL    &              &           &           &               &           &  \textbf{500,700} \\
+   \hline\hline
+\end{tabular}}
+\caption{Total number of anticipated SUs on SDSC Expanse for the two requested sub-projects 
+as outlined in sections \ref{sec:spine-model}, \ref{sec:whole-cell}.}
+\label{tab:sus}
+\end{table}

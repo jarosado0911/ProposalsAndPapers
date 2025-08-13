@@ -1,0 +1,96 @@
+% {{{ Preamble
+\documentclass[a4paper, 10pt, notitlepage]{nsf}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage{fixltx2e}
+\usepackage{wrapfig,framed}
+\usepackage{timestamp}
+\usepackage{blindtext}
+\usepackage{chemarr}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xspace}
+\usepackage{pgfplots}
+\usepackage{titling}
+\usepackage{mhchem}
+\usepackage{fixltx2e} 
+\usepackage{pgfgantt}
+\usepackage[normalem]{ulem}
+\usepackage{enumitem}
+\pgfplotsset{compat=1.8}
+\pgfplotsset{every axis/.style={scale only axis}}
+\newcommand{\ug}{uG4\xspace}
+\newcommand{\delT}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\ccyt}[0]{c_c}
+\newcommand{\cer}[0]{c_e}
+\newcommand{\ip}[1]{p}
+\newcommand{\cca}[0]{[\mathrm{Ca}^{2+}]}
+\newcommand{\cip}[0]{[\mathrm{IP}_3]}
+\renewcommand{\abstractname}{Summary}
+\renewcommand{\refname}{References}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\externaldocument{performance}
+% }}}
+
+% Authors and Title {{{
+\author{Gillian Queisser (PI), Piyush Borole, James Rosado}
+\title{Ultrastructural calcium simulations in neurons}
+\date{}
+% }}}
+
+% Begin of document {{{
+\begin{document}
+% }}}
+
+% Title and Abstract {{{
+\maketitle
+\begin{abstract}
+In this project we intend to study the calcium dynamics in reconstructed neurons, where the endoplasmic reticulum (ER), a multifunctional intracellular organelle of a neuron that consists of a complex three-dimensional network of connected endomembrane tubules, stacks and cisternae, is involved in various ion exchange processes. Of interest here are the three-dimensional spatiotemporal Ca\textsuperscript{2+} and Inositol-3-Phosphate (IP\textsubscript{3}) dynamics in the intracellular space of neurons. We model these biochemical dynamics by a system of diffusion-reaction equations with highly nonlinear, ordinary differential equation flux-boundary conditions. Using finite volume discretization together with geometric multigrid methods (GMG) {\color{red} and finite difference methods on 1d reconstructions to model synapse loss with bidirectional electrical and ion coupling}, we intend to run systematic numerical simulations of the calcium model on (1) Spine-Dendrite geometries with {\color{red} multispines} and (2) full cell geometries {\color{red} under synapse loss}. While only 1d morphological neuron data is directly available, our project requires a detailed 3d representation of the neuronal computational domain {\color{red} for multispine experiments} {\color{red} and only 1d reconstructions for modeling bidirectional coupling for synapse loss}. For this we developed an automated pipeline to generate the necessary domains. Thus, we (3) intend to study and reconstruct cells from the \url{www.neuromorpho.org} database using available HPC resources. In total, this project should positively impact the computational mathematics research community, as well as parallel computing and neuroscience fields.
+\end{abstract}
+
+% version tag (final)
+% \textcolor{green}{\timestamp}
+% }}}
+
+% Research Objectives {{{
+\section{Research Objectives}
+\input{inc/research_objectives.tex}
+%\input{inc/progress.tex}
+% }}}
+
+% Computational Methodology {{{
+\section{Computational Methology}
+\input{inc/methods.tex}
+% }}}
+
+% Application Efficiency {{{
+\section{Application efficiency}
+\input{inc/application_efficiency.tex}
+% \input{inc/efficiency.tex}
+% }}}
+% Computational Research Plan {{{
+\section{Computational Research Plan}
+\label{sec:research_plan}
+\input{inc/research_plan.tex}
+% }}}
+% Justification of Resources Requested {{{
+\section{Justification of Resources Requested}
+\input{inc/resources.tex}
+% }}}
+% Additional considerations {{{
+\section{Additional considerations}
+\input{inc/additional.tex}
+% }}}
+
+% {{{ Bibliography
+%\bibliographystyle{bst}
+\newpage
+\bibliography{references.bib}
+% }}}
+
+% {{{ End of document
+\end{document}
+% }}}

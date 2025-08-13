@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: xsede.aux
+The style file: nsf.bst
+Database file #1: references.bib.bib
+Warning--empty publisher in BorgGraham
+You've used 32 entries,
+            2925 wiz_defined-function locations,
+            879 strings with 11205 characters,
+and the built_in function-call counts, 18991 in all, are:
+= -- 1856
+> -- 977
+< -- 59
++ -- 371
+- -- 333
+* -- 1679
+:= -- 3142
+add.period$ -- 32
+call.type$ -- 32
+change.case$ -- 274
+chr.to.int$ -- 32
+cite$ -- 33
+duplicate$ -- 873
+empty$ -- 1243
+format.name$ -- 375
+if$ -- 3987
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 31
+newline$ -- 101
+num.names$ -- 128
+pop$ -- 230
+preamble$ -- 2
+purify$ -- 239
+quote$ -- 0
+skip$ -- 670
+stack$ -- 0
+substring$ -- 1131
+swap$ -- 328
+text.length$ -- 47
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 285
+warning$ -- 1
+while$ -- 146
+width$ -- 0
+write$ -- 352
+(There was 1 warning)

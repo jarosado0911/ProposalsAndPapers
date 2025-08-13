@@ -29,7 +29,7 @@ This was the submission for 2021.
 ### 2022 Submission:
 This was the submission for 2022.
 - [Download latest 2022 xsede.pdf](2022%20submission-renewal/xsede.pdf)
-- [Download latest 2022 xsede.pdf](2022%20submission-renewal/performance.pdf)
+- [Download latest 2022 performance.pdf](2022%20submission-renewal/performance.pdf)
 
 ### Dendritic Spine Paper
 This was a paper I collaborated with my doctoral advisor Dr. Gillian Queisser and Dr. Andreas Vlachos and Viet. This was the pre-published version.

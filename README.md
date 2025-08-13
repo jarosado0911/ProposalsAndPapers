@@ -6,10 +6,10 @@
 ![PRs](https://img.shields.io/github/issues-pr/jarosado0911/ProposalsAndPapers)
 ![Stars](https://img.shields.io/github/stars/jarosado0911/ProposalsAndPapers)
 
+## XSEDE Proposals
 ![Build PDFs 2019](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs.yml/badge.svg) ![Build PDFs 2020](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-pdfs2020.yml/badge.svg) ![Build Spine PDF](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-spine.yml/badge.svg) [![Build 2021 Submission PDFs](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2021-submission.yml/badge.svg?branch=main)](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2021-submission.yml) [![Build 2021 Progress PDFs](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build2021progress.yml/badge.svg?branch=main)](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build2021progress.yml)
 [![Build 2022 Submission-Renewal PDFs](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2022-submission-renewal.yml/badge.svg?branch=main)](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2022-submission-renewal.yml)
-
-## XSEDE Proposals 
+[![Build 2022 Progress-Report PDFs](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2022-progress-report.yml/badge.svg?branch=main)](https://github.com/jarosado0911/ProposalsAndPapers/actions/workflows/build-2022-progress-report.yml)
 
 The XSEDE (Extreme Science and Engineering Discovery Environment) initiative, is a national cyberinfrastructure funded by the National Science Foundation (NSF) to provide researchers access to advanced digital resources. It supports scientific discovery through high-performance computing, data analysis, and visualization services. The federal government has engaged with programs like XSEDE indirectly through collaborations that enhance research, including cryptography, cybersecurity, and large-scale data analysis. XSEDE fosters partnerships between government, academia, and industry, enabling agencies like the NSA to leverage cutting-edge computational tools and expertise. The initiative plays a critical role in training the next generation of computational scientists.
 

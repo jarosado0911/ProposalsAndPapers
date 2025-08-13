@@ -1,0 +1,112 @@
+name: Build 2022 Progress-Report PDFs
+
+on:
+  push:
+    paths:
+      - '2022 progress-report/**.tex'
+      - '2022 progress-report/**.bib'
+      - '**.sty'
+      - '**.cls'
+      - '.github/workflows/build-2022-progress-report.yml'
+  pull_request:
+    paths:
+      - '2022 progress-report/**.tex'
+      - '2022 progress-report/**.bib'
+      - '**.sty'
+      - '**.cls'
+      - '.github/workflows/build-2022-progress-report.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-2022-progress-report
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      # Detect LaTeX root files (look for \documentclass)
+      - name: Discover LaTeX roots
+        id: discover
+        run: |
+          set -euo pipefail
+          cd "2022 progress-report"
+          ROOTS="$(grep -rl --include='*.tex' '^[[:space:]]*\\documentclass' . | sed 's|^\./||')"
+          if [ -z "$ROOTS" ]; then
+            echo "No LaTeX root files found in '2022 progress-report'." >&2
+            exit 1
+          fi
+          printf 'ROOT_FILES<<EOF\n%s\nEOF\n' "$ROOTS" >> "$GITHUB_ENV"
+          echo "Detected roots:"; echo "$ROOTS"
+
+      # Build with latexmk (PDFs land in "2022 progress-report")
+      - name: Compile LaTeX (latexmk)
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: ${{ env.ROOT_FILES }}
+          working_directory: 2022 progress-report
+          args: -pdf -interaction=nonstopmode -file-line-error
+          # Uncomment if needed:
+          # latexmk_use_xelatex: true
+          # latexmk_use_lualatex: true
+          # latexmk_shell_escape: true
+
+      - name: List produced PDFs
+        run: |
+          ls -lh "2022 progress-report" || true
+          ls -lh "2022 progress-report"/*.pdf || echo "No PDFs found."
+
+      - name: Upload PDFs (artifacts)
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2022-progress-report-pdfs
+          path: |
+            2022 progress-report/*.pdf
+          if-no-files-found: warn
+          retention-days: 14
+
+      # Rebase first (with autoStash), then copy + stage + commit PDFs into ./2022/
+      - name: Commit and push PDFs into 2022 folder
+        if: startsWith(github.ref, 'refs/heads/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Clean pull to avoid "index contains uncommitted changes"
+          git fetch origin "$BRANCH"
+          git checkout "$BRANCH"
+          git -c rebase.autoStash=true pull --rebase origin "$BRANCH"
+
+          # Copy PDFs to target folder
+          mkdir -p "2022 progress"
+          shopt -s nullglob
+          for f in "2022 progress-report"/*.pdf; do
+            cp -f "$f" "2022/"
+          done
+
+          # Stage only the destination PDFs
+          git add "2022 progress"/*.pdf 2>/dev/null || true
+
+          # Commit only if there are changes
+          if git diff --cached --quiet; then
+            echo "No PDF changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore(2022): update progress-report PDFs [skip ci]"
+          git push --force-with-lease origin "$BRANCH"

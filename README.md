@@ -24,7 +24,7 @@ This was the submission for 2021.
 - [Download latest 2021 xsede.pdf](2021%20submission/xsede.pdf)
 - [Download latest 2021 performance.pdf](2021%20submission/performance.pdf)
 - [Download latest 2021 progress(short).pdf](2021%20submission/progress.pdf)
-- [Download latest 2021 progress.pdf](2021%20progress)
+- [Download latest 2021 progress.pdf](2021%20progress/progress.pdf)
 
 ### 2022 Submission:
 This was the submission for 2022.

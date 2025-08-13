@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+
+\bibitem{Araya2014}
+R.~Araya, T.~P. Vogels, and R.~Yuste.
+\newblock Activity-dependent dendritic spine neck changes are correlated with
+  synaptic strength.
+\newblock {\em Proceedings of the National Academy of Sciences}, 111, 7 2014.
+
+\bibitem{Breit2018}
+Markus Breit, Marcus Kessler, Martin Stepniewski, Andreas Vlachos, and Gillian
+  Queisser.
+\newblock Spine-to-dendrite calcium modeling discloses relevance for precise
+  positioning of ryanodine receptor-containing spine endoplasmic reticulum.
+\newblock {\em Scientific Reports}, 8, 12 2018.
+
+\bibitem{Grein2020}
+S.~Grein.
+\newblock {\em A novel mesh generator for the numerical simulation of
+  multi-scale physics in neurons}.
+\newblock PhD thesis, Temple University, 2020.
+
+\bibitem{Steffens2021}
+Heinz Steffens, Alexander~C. Mott, Siyuan Li, Waja Wegner, Pavel Švehla,
+  Vanessa W.~Y. Kan, Fred Wolf, Sabine Liebscher, and Katrin~I. Willig.
+\newblock Stable but not rigid: Chronic in vivo sted nanoscopy reveals
+  extensive remodeling of spines, indicating multiple drivers of plasticity.
+\newblock {\em Science Advances}, 7, 6 2021.
+
+\bibitem{Tonnesen2014}
+Jan Tønnesen, Gergely Katona, Balázs Rózsa, and U~Valentin Nägerl.
+\newblock Spine neck plasticity regulates compartmentalization of synapses.
+\newblock {\em Nature Neuroscience}, 17, 5 2014.
+
+\end{thebibliography}
